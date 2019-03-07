@@ -69,3 +69,6 @@ public class Solution {
         scan.close();
     }
 }
+
+
+Note: Important line to note here is: sc.nextLine(); beforee accepting String from the user.
