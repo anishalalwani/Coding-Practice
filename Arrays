@@ -1,0 +1,14 @@
+Question:
+https://www.hackerrank.com/challenges/30-arrays/problem
+
+Answer:
+
+for (int i = 0; i < n; i++) {
+            int arrItem = Integer.parseInt(arrItems[i]);
+            arr[i] = arrItem;
+        }
+        int i;
+        for(i=n-1;i>=0;i--)
+            System.out.print(arr[i]+" ");
+        scanner.close();
+    }
