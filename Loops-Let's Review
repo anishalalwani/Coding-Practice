@@ -1,0 +1,20 @@
+Question:
+https://www.hackerrank.com/challenges/30-review-loop/problem
+
+Answer:
+
+        Scanner sc=new Scanner(System.in);
+        int n = sc.nextInt();
+        int i,j;
+        
+        String  s;
+        for(i=0;i<n;i++){
+            s = sc.next();
+            char[] c = s.toCharArray();
+            for(j=0;j<s.length();j+=2)
+                System.out.print(c[j]);
+            System.out.print(" ");
+            for(j=1;j<s.length();j+=2)
+                System.out.print(c[j]);
+            System.out.println();
+        }
