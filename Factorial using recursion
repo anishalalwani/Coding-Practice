@@ -1,0 +1,12 @@
+Question:
+https://www.hackerrank.com/challenges/30-recursion/submissions/code/101137282
+
+Answer:
+
+static int factorial(int n) {
+        if(n<=1)
+            return 1;
+        else
+            return n*factorial(n-1);
+
+    }
