@@ -1,0 +1,19 @@
+Question:
+https://leetcode.com/problems/to-lower-case/
+
+Answer:
+class Solution {
+    public String toLowerCase(String str) {
+        char[] arr = new char[str.length()];
+		
+		int i = 0;
+		for (char c : str.toCharArray()) {
+			
+			int x = (int) c;
+			if(x >= 65 && x <= 90) x = x + 32;
+			arr[i] = (char) x;
+			i++;
+		}
+		return new String(arr);
+    }
+}
