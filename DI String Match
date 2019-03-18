@@ -1,0 +1,21 @@
+Question:
+https://leetcode.com/problems/di-string-match/
+
+Answer:
+class Solution {
+    public int[] diStringMatch(String S) {
+        int n = S.length();
+        int i, val=0, val1=n;
+        int ans[]=new int[n+1];
+        for(i=0;i<n;i++)
+        {
+            if(S.charAt(i)=='I')
+                ans[i]=val++;
+            else
+                ans[i]=val1--;
+        }
+        ans[n]=val1;
+        return ans;
+        
+    }
+}
