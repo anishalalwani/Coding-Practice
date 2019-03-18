@@ -1,0 +1,28 @@
+Question:
+https://leetcode.com/problems/reverse-string/
+
+Answer:
+class Solution {
+    public void reverseString(char[] s) {
+        int i, j=s.length-1; char t;
+        for(i=0;i<s.length;i++)
+        {
+            if(i<j){
+            t=s[j];
+            s[j]=s[i];
+            s[i]=t;
+                j--;
+           
+            }
+        }
+        System.out.print(s);
+    }
+}
+
+or
+
+public class Solution {
+    public String reverseString(String s) {
+        return new StringBuilder(s).reverse().toString();
+    }
+}
