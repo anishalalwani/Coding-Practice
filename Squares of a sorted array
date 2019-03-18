@@ -1,0 +1,14 @@
+Question:
+https://leetcode.com/problems/squares-of-a-sorted-array/
+
+Answer:
+class Solution {
+    public int[] sortedSquares(int[] A) {
+     int i;
+     int[] sorted=new int[A.length];
+        for(i=0;i<A.length;i++)
+            sorted[i]=A[i]*A[i];
+        Arrays.sort(sorted);
+        return sorted;
+    }
+}
