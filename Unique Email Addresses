@@ -1,0 +1,37 @@
+Question:
+https://leetcode.com/problems/unique-email-addresses/
+
+Solution:
+class Solution {
+    public int numUniqueEmails(String[] emails) {
+        String domainName, local, ans;
+        int len=0;
+        List<String> emailAdd = new ArrayList<String>();
+        for(String email:emails)
+        {
+            int indexDiv = email.indexOf('@');
+            domainName = email.substring(indexDiv,email.length());
+            local = email.substring(0,indexDiv);
+            String str=local;
+            if(local.contains(".")){
+                
+                str =local.replace(".","");
+                
+            }
+                 
+           // System.out.println(str);
+            if(str.contains("+")){
+                 str = str.substring(0,str.indexOf('+'));
+               // System.out.println(str);
+
+            }
+            ans = str.concat(domainName); 
+            if(!emailAdd.contains(ans)){
+           //   System.out.println(ans);
+                emailAdd.add(ans);
+            }
+            
+        }
+     return emailAdd.size();   
+    }
+}
