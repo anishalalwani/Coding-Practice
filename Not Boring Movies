@@ -1,0 +1,12 @@
+Question:
+https://leetcode.com/problems/not-boring-movies/
+
+Answer:
+select *
+from cinema
+where mod(id, 2) = 1 and description != 'boring'
+order by rating DESC;
+or
+select * from cinema
+where (id%2=1) and description not in("boring") 
+order by rating desc
