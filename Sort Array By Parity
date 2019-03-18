@@ -1,0 +1,30 @@
+Question:
+https://leetcode.com/problems/sort-array-by-parity/
+
+
+Solution:
+
+class Solution {
+    public int[] sortArrayByParity(int[] A) {
+        int n=A.length;
+        int []b=new int[n];
+        //int []c = new int[n];
+        int i, count1=n-1, count2=0;
+        for(i=0;i<n;i++)
+        {
+            if(A[i]%2==0){
+                b[count2]=A[i];
+                count2++;
+            }
+            else{
+                b[count1]=A[i];
+                count1--;
+            }
+                 
+        }
+        
+        return b;
+    }
+    
+    
+}
