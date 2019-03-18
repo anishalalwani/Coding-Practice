@@ -71,4 +71,4 @@ public class Solution {
 }
 
 
-Note: Important line to note here is: sc.nextLine(); beforee accepting String from the user.
+Note: Important line to note here is: sc.nextLine(); before accepting String from the user.
