@@ -1,0 +1,65 @@
+Question:
+https://leetcode.com/problems/valid-parentheses/
+
+Answer:
+class Solution {
+    public boolean isValid(String s) {
+     char []c=s.toCharArray();
+     char com;
+        int j=0;
+    List<Character> stack = new ArrayList<>();
+        if(s.contains(" "))
+            return false;
+     for(int i=0;i<s.length();i++)
+     {
+        if(c[i]=='(' || c[i]=='{' || c[i]=='[')
+        {
+            stack.add(c[i]);
+            j++;
+             
+            continue;
+        }
+        
+        else
+        {
+            if(stack.size()<=0)
+                return false;
+            switch(c[i])
+            {
+                case ')':
+                    com='(';
+                    if(com==stack.get(stack.size()-1)){
+                        stack.remove(stack.size()-1);
+                    }
+                    else
+                        return false;
+                break;
+                case '}':
+                    com='{';
+                    if(com==stack.get(stack.size()-1)){
+                        stack.remove(stack.size()-1);
+                    }
+                    
+                    else
+                        return false;
+                break;
+                case ']':
+                    com='[';
+                    if(com==stack.get(stack.size()-1)){
+                        stack.remove(stack.size()-1);
+                    }
+                    
+                    else
+                        return false;
+                    break;
+                
+                    
+            }
+        }
+     }
+        if(stack.isEmpty())
+            return true;
+        else
+            return false;
+    }
+}
