@@ -1,0 +1,5 @@
+Question:
+https://www.hackerrank.com/challenges/more-than-75-marks/problem
+
+Answer:
+SELECT name FROM STUDENTS where marks>75 order by RIGHT(name,3),ID;
