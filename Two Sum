@@ -1,0 +1,26 @@
+Question:
+https://leetcode.com/problems/two-sum/
+
+Answer:
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int ans[]=new int[2];
+        int i=0,n=nums.length,j;
+       // Arrays.sort(nums);
+        while(i<n){
+            
+            j=i+1;
+            while(j<n)
+            {
+                if(nums[i]+nums[j]==target){
+                    ans[0]=i;
+                    ans[1]=j;
+                }
+                j++;
+            }
+        i++;
+        }
+        
+        return ans;
+    }
+}
