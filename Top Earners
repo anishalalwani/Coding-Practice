@@ -1,0 +1,18 @@
+Question:
+https://www.hackerrank.com/challenges/earnings-of-employees/problem
+
+Answer:
+
+MS SQL:
+
+SELECT SALARY*MONTHS, COUNT(employee_id) FROM EMPLOYEE where salary*months=(SELECT MAX(salary*months) from employee) group by salary*months;
+
+OR
+
+select top 1 salary*months, count(*) from employee
+group by salary*months order by salary*months desc ;
+
+MySQL:
+select salary*months as earnings, count(*) from employee
+group by 1
+order by 1 desc limit 1;
