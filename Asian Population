@@ -3,3 +3,5 @@ https://www.hackerrank.com/challenges/asian-population/problem
 
 Answer:
 SELECT sum(city.population) from city, country where city.countrycode=country.code and country.continent='Asia';
+
+Can use Join as well for this question.
