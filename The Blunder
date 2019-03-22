@@ -1,0 +1,10 @@
+Question:
+https://www.hackerrank.com/challenges/the-blunder/problem
+
+Answer:
+
+MySQL:
+SELECT CEIL(AVG(Salary)-AVG(REPLACE(Salary,'0',''))) FROM EMPLOYEES;
+
+MS SQL:
+select CEILING(AVG(CAST(SALARY as DECIMAL(9,2))) - AVG(CAST(REPLACE(Salary,'0','') as DECIMAL(9,2)))) from EMPLOYEES;
