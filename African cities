@@ -1,0 +1,5 @@
+Question:
+https://www.hackerrank.com/challenges/african-cities/problem
+
+Answer:
+SELECT city.name from city inner join country on city.countrycode=country.code where country.continent='Africa';
