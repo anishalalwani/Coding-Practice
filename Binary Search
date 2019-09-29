@@ -4,12 +4,12 @@
  * Pre-requisite: sorted array
  * 
  * Algorithm: Recursive
- * 1. fun(arr, start, end, x)
+ * 1. search(arr, start, end, x)
  * 2. if(end >= start)
  * 3. mid = start + (end-start) + 1
  * 4. if arr[mid] == x return
- * 5. elseif arr[mid] > x return fun(arr, 0, mid-1, x)
- * 6. else fun(arr, mid+1, end, x)
+ * 5. elseif arr[mid] > x return search(arr, 0, mid-1, x)
+ * 6. else search(arr, mid+1, end, x)
  * 7. return -1
  * 
  * Iterative: 
@@ -26,7 +26,7 @@ import java.util.Scanner;
 
 public class binary_search {
 	public static int binary_search(int arr[], int low, int high, int value) {
-		while(high >= low) {
+		if(high >= low) {
 			int mid = low + (high-low)/2;
 			if(arr[mid] == value) 
 				return mid;
