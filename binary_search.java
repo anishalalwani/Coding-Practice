@@ -1,0 +1,59 @@
+package basics;
+/*
+ * 
+ * Binary search: 
+ * Pre-requisite: sorted array
+ * 
+ * Algorithm: Recursive
+ * 1. fun(arr, start, end, x)
+ * 2. if(end >= start)
+ * 3. mid = start + (end-start) + 1
+ * 4. if arr[mid] == x return
+ * 5. elseif arr[mid] > x return fun(arr, 0, mid-1, x)
+ * 6. else fun(arr, mid+1, end, x)
+ * 7. return -1
+ * 
+ * Iterative: 
+ * same as above just elseif will have end = mid - 1
+ * else will have start = mid + 1
+ * 
+ * Time complexity: 
+ * Best: O(1) when mid element
+ * Worst: O(log n)
+ * 
+ * Space complexity: O(1) for iterative and O(log n) for recursive
+ */
+import java.util.Scanner;
+
+public class binary_search {
+	public static int binary_search(int arr[], int low, int high, int value) {
+		while(high >= low) {
+			int mid = low + (high-low)/2;
+			if(arr[mid] == value) 
+				return mid;
+			if(arr[mid] > value) 
+				return binary_search(arr, low, mid-1, value);
+			else
+				return binary_search(arr, mid+1, high, value);
+		}
+		return -1;
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);	
+		System.out.println("Enter number of elements: ");
+		int n = sc.nextInt();
+		int[] arr = new int[n];
+		System.out.println("Enter numbers: ");	
+		for(int i=0; i<n; i++) {
+			arr[i] = sc.nextInt();
+		}
+		System.out.println("Enter number to be searched: ");
+		int value = sc.nextInt();
+		int result = binary_search(arr, 0, n-1, value);
+		if(result == -1) 
+			System.out.print("Number not found!");
+		else 
+			System.out.print("Position at " + result+1);
+	}
+
+}
