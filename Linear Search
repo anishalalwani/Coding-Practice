@@ -1,5 +1,3 @@
-package basics;
-
 /*
  * 1. Linear search: iterating through every element of the array
  * Algorithm: 
